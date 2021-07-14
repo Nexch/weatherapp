@@ -6,10 +6,21 @@
 		<link rel="stylesheet" href="styles/styles.css" />
   </head>
   <body>
-    <h1>Hello, World!</h1>
-    <h4 id='date'></h4>
 
+		<form form="Login_form" class="form" id="forms">
+		<div class="form1">
+			<input class="submit-btn" id="city" type="text" value="" placeholder="Enter a city"/>
+			<input type="submit" style="display: none"/>
+		</div>
+		</form>
 
+		<div class="ids">
+    	<p id='date'></p>
+			<p id="country"> </p>
+			<p id="weather"></p>
+		</div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<script async src="./javascript/index.js"></script>
   </body>
 </html>
