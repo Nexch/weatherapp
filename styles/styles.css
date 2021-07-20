@@ -40,6 +40,16 @@ form {
 }
 
 .form1 {
-  float: right;
+  float: left;
   position: relative;
+  width: 10%;
+}
+
+.temp_to {
+  color: white;
+  font-size: 40px;
+  border: solid blue;
+  background-color: rgba(0, 0, 0, 0);
+  width: 100%;
+  float: right;
 }
