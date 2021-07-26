@@ -24,8 +24,9 @@ async function get(city) {
       display(lol.weather[0].main, 'weather', 'Climate');
     }
   } catch (error) {
-    return(error);
+    return (error);
   }
+  return ('OK');
 }
 
 const formTemp = () => {
