@@ -1,9 +1,9 @@
 let lol;
+let $;
 
 const display = (lol, id, m) => {
   document.getElementById(`${id}`).innerHTML = `${m}:${lol}`;
-  const temp = document.getElementById('temps').value;
-  if (temp === 'F' && id === 'date') {
+  if (document.getElementById('temps').checked && id === 'date') {
     lol = Math.round((lol * (9 / 5)) + 32);
     document.getElementById(`${id}`).innerHTML = `F: ${lol}`;
   }
@@ -13,30 +13,25 @@ const display = (lol, id, m) => {
   }
 };
 
-const weather = (city) => {
-  const settings = {
-    async: true,
-    crossDomain: true,
-    url: `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=f43223591fa77f00dda54c1439ff73ff`,
-    method: 'GET',
-    error(xhr, status, error) {
-      const errorMessage = `${xhr.status}: ${xhr.statusText}`;
-      display(`Error - ${errorMessage}`, 'error', '');
-    },
-  };
-
-  $.ajax(settings).done((response) => {
-    lol = response;
-    display(lol.main.temp, 'date', 'C*');
-    display(lol.name, 'country', 'Country');
-    display(lol.weather[0].main, 'weather', 'Climate');
-  });
-};
+async function get(city) {
+  try {
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=f43223591fa77f00dda54c1439ff73ff`);
+    if (response.ok) {
+      const jsonData = await response.json();
+      lol = jsonData;
+      display(lol.main.temp, 'date', 'C*');
+      display(lol.name, 'country', 'Country');
+      display(lol.weather[0].main, 'weather', 'Climate');
+    }
+  } catch (error) {
+    return(error);
+  }
+}
 
 const formTemp = () => {
   const name = document.getElementById('city').value;
   document.getElementById('city').value = '';
-  weather(name);
+  get(name);
 };
 
 document.querySelector('.form')?.addEventListener('submit', (e) => {

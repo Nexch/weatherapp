@@ -1,6 +1,6 @@
-## 👩🏼‍💻 About the weather app
+## 👩🏼‍💻The weather app done in js
 
-This is a project that contains a small Library app, that was created with Javascript, HTML, Bootstrap and, DOM. In this app you can store a new book, see the books that are stored, you can check if is already read or not, and you can delete it.
+This is a project that contains a small weather app, that was created with Javascript, HTML, css and, DOM. In this app you get the temperature of the place you want, you can see the temperature the place and the climate
 
 ## 🔧 Built with
 

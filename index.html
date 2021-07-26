@@ -10,16 +10,19 @@
 		<form form="Login_form" class="form" id="forms">
 		<div id="error" class="form1">
 			<input class="submit-btn" id="city" type="text" value="" placeholder="Enter a city"/>
-
-  		<input class="temp_to" list="temp" id="temps">
-  		<datalist id="temp">
-    		<option value="C">
-    		<option value="F">
-  		</datalist>
-
 			<input type="submit" style="display: none"/>
 		</div>
 		</form>
+
+		<div class="toggle">
+			<p>F</p>
+			<label class="switch">
+  			<input id="temps" type="checkbox">
+  			<span class="slider round"></span>
+			</label>
+		</div>
+
+
 
 		<div class="ids">
     	<p id='date'></p>
